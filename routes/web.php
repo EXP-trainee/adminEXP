@@ -25,9 +25,5 @@ Route::get('/dashboard', 'UserController@dashboard')->name('dashboard');
 Route::get('/showTodo', 'TodoController@showTodo')->name('showTodo');
 Route::get('/showUser', 'UserController@showUser')->name('showUser');
 
-Route::get('/shownhanvien', 'UserController@showNhanVien')->name('showNhanVien');
-Route::get('/createnhanvien','UserController@createNhanVien')->name('createNhanVien');
-Route::post('/postnhanvien','UserController@postNhanVien')->name('postNhanVien');
-Route::get('/editnhanvien/{id}','UserController@editNhanVien')->name('editNhanVien');
-Route::post('/updatenhanvien/{id}','UserController@updateNhanVien')->name('updateNhanVien');
-Route::get('/deleteNhanvien/{id}','UserController@deleteNhanvien')->name('deleteNhanVien');
+
+Route::resource('nhanvien', 'NvController');

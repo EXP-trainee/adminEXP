@@ -31,9 +31,10 @@
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form role="form" action="{{route('postNhanVien')}}" method="POST">
+            <form role="form" action="{{route('nhanvien.store')}}" method="POST">
               <div class="card-body">
                 @csrf
+                {{-- @method('POST') --}}
                   <div class="form-group">
                       <label for="tensp">Họ tên</label>
                       <input type="text" name="hoten" id="" class="form-control" placeholder="" aria-describedby="helpId">

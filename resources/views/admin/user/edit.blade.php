@@ -31,7 +31,8 @@
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form role="form" action="{{route('updateNhanVien',['id'=>$findNhanVien->id])}}" method="POST">
+            <form role="form" action="{{route('nhanvien.update',['nhanvien'=>$findNhanVien->id])}}" method="POST">
+              @method('PUT')
               <div class="card-body">
                 @csrf
                 <div class="form-group">

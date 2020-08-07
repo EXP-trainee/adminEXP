@@ -30,10 +30,11 @@
       <div class="container-fluid">
         <!-- /.row -->
         <div class="row">
-            <div class="col-md-10">
+            <div class="col-md-12">
               <div class="card">
                 <div class="card-header">
-                  <h3 class="card-title"><a href="{{route('createNhanVien')}}"><button class="btn btn-primary">thêm nhân viên</button></a></h3>
+                  {{-- <h3 class="card-title"><a href="#"><button class="btn btn-primary">thêm nhân viên</button></a></h3> --}}
+                  <h3 class="card-title"><a href="{{route('nhanvien.create')}}"><button class="btn btn-primary">thêm nhân viên</button></a></h3>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
@@ -61,8 +62,13 @@
                           <td>{{$item->gioitinh}}</td>
                           <td>{{$item->diachi}}</td>
                           <td>
-                              <a href="{{route('editNhanVien',['id' =>$item->id])}}"><i class="fa fa-edit " aria-hidden="true"></i></a>
-                              <a href="{{route('deleteNhanVien',['id' =>$item->id])}}" ><i class="fa fa-trash" aria-hidden ="true"></i> </a>
+                              <a href="{{route('nhanvien.edit',['nhanvien' => $item->id])}}" class="btn btn-primary"><i class="fa fa-edit " aria-hidden="true"></i></a>
+                              {{-- <a href="{{route('nhanvien.destroy',['nhanvien' => $item->id])}}" ><i class="fa fa-trash" aria-hidden ="true"></i> </a> --}}
+                              <form action="{{route('nhanvien.destroy',['nhanvien' => $item->id])}}" method="post">
+                                @csrf
+                                <input type="hidden"  name="_method" value="DELETE">
+                                <button type="submit" class="btn btn-danger"><i class="fa fa-trash" aria-hidden ="true"></i></button>
+                              </form>
                           </td>
                       </tr>
                     </tbody>
