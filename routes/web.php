@@ -25,5 +25,4 @@ Route::get('/dashboard', 'UserController@dashboard')->name('dashboard');
 Route::get('/showTodo', 'TodoController@showTodo')->name('showTodo');
 Route::get('/showUser', 'UserController@showUser')->name('showUser');
 
-
 Route::resource('nhanvien', 'NvController');

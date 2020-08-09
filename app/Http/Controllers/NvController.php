@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\NhanVien;
+use App\Car;
 use Illuminate\Support\Facades\DB;
 
 class NvController extends Controller
@@ -15,9 +16,9 @@ class NvController extends Controller
      */
     public function index()
     {
-        $listNhanvien =  NhanVien::all();
-        // $listNhanvien = DB::table('nhanviens')->paginate(6); // phan trang
-        return view('admin.user.show', ['listNhanvien' => $listNhanvien]);
+        $listNhanvien =  NhanVien::all();   
+        $listCar =  Car::all();   
+        return view('admin.user.show', ['listNhanvien' => $listNhanvien , 'listCar' => $listCar]);
     }
 
     /**

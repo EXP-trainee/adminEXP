@@ -74,7 +74,7 @@
                     </tbody>
                     @endforeach
                   </table>
-                </div>
+                </div> 
                 <!-- /.card-body -->
                 <div class="card-footer clearfix">
                   <ul class="pagination pagination-sm m-0 float-right">
@@ -87,12 +87,50 @@
                 </div>
               </div>
               <!-- /.card -->
+
+              <div class="card-body">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>ten xe</th>
+                        <th>nha san xuat</th>
+                        <th>khoi luong</th>
+                        <th>action</th>
+                    </tr>
+                  </thead>
+                  @foreach ($listCar as $item2)
+                  <tbody>
+                    <tr>
+                        <td>{{$item2->id}}</td>
+                        <td>{{$item2->name}}</td>
+                        <td>{{$item2->nsx}}</td>
+                        <td>{{$item2->kl}}</td>
+                        <td>
+                            <a href="">edit</a>
+                            <a href="">delete</a>
+                        </td>
+                    </tr>
+                  </tbody>
+                  @endforeach
+                </table>
+              </div> 
+
+
         <!-- /.row -->
       </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
+
+
+
+
+
+
+
+  
 
 @endsection
 
